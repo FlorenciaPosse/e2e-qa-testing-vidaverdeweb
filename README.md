@@ -53,8 +53,8 @@ Ejecuta en la terminal:
 
 `pytest --headed`
 
-Irene Arribas Méndez
-Anna Moreno Bonell
-Sara Posada Domínguez
+Irene Arribas Méndez, 
+Anna Moreno Bonell, 
+Sara Posada Domínguez y 
 Florencia Raquel Posse
 
