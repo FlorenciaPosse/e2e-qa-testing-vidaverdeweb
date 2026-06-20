@@ -55,6 +55,12 @@ Navigate to the project folder and run:
 pytest --headed
 ```
 
+Alternativelly you can use the folowing 
+
+```bash
+python -m pytest --headed
+```
+
 ## Team Members
 
 * Irene Arribas Méndez
