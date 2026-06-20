@@ -1,60 +1,65 @@
-# Proyecto QA Manual y Automatizado de la web Bootcamp QA
+# Manual and Automated QA Project for the QA Bootcamp Website
 
-En este proyecto se ha llevado a cabo un proceso completo de aseguramiento de la calidad (QA) sobre la funcionalidad principal de la web: https://web-qa.dev.adalab.es/
-El proyecto se ha realizado en equipo siguiendo metodología ágil Scrum y BDD para el diseño de las pruebas antes del desarrollo, siguiendo buenas prácticas de testing.
+In this project, a complete Quality Assurance (QA) process was carried out on the main functionality of the website: https://web-qa.dev.adalab.es/
 
-## Plan de Pruebas, resultados y reporte de errores: [Ver Plan de Pruebas](https://github.com/Bootcamp-QA/plandepruebas.html)
-En este documento se detalla el plan de pruebas, las funcionalidades probadas, el resultado de las pruebas ejecutadas y el reporte de errores.
+The project was developed as a team using the Scrum agile methodology and BDD (Behavior-Driven Development) for test design before development, following testing best practices.
 
+## Test Plan, Results, and Bug Reports: [View Test Plan](https://github.com/Bootcamp-QA/plandepruebas.html)
 
-## Automatización E2E - Tecnologías
+This document details the test plan, the functionalities tested, the results of the executed tests, and the bug reports.
 
-- ![Python](https://img.shields.io/badge/Python-3.12%2B-blue)  
-- ![Playwright](https://img.shields.io/badge/Playwright-v1.48-green)
+## E2E Automation – Technologies
 
-## Resultados de las pruebas automatizadas
+* Python 3.12+
+* Playwright v1.48
 
-Se ha configurado un flujo de integración continua con github actions que ejecuta las pruebas después de cada cambio y una vez a la semana al final de cada sprint. Puede consultar en este enlace el resultado de la ultima ejecucion de pruebas y descargar el reporte de los resultados de las pruebas:
+## Automated Test Results
+
+A continuous integration workflow has been configured with GitHub Actions to run the tests after every change and once a week at the end of each sprint.
+
+You can check the latest test execution results and download the test report from the following link:
 
 ![Test Workflow](https://github.com/Bootcamp-QA/playwright-python-template/actions/workflows/playwright_tests.yml/badge.svg)
 
-## Requisitos del Proyecto
+## Project Requirements
 
 ### Python 3.12
 
-Descarga e instala Python versión 3.12 desde su web oficial (https://www.python.org/downloads/)
-Asegurate que Python se añade al PATH durante la instalación.
+Download and install Python 3.12 from the official website:
 
+https://www.python.org/downloads/
 
-### Instalar Dependencias
+Make sure Python is added to the PATH during installation.
 
-Una vez instalado Python:
+### Install Dependencies
 
-Clona este repositorio.
+Once Python is installed:
 
-Accede a la carpeta del proyecto.
+1. Clone this repository.
+2. Navigate to the project folder.
+3. Run the following commands in the terminal:
 
-Ejecuta en la terminal:
-
-``
+```bash
 pip install -r requirements.txt
-``
+```
 
-``
+```bash
 playwright install
+```
 
-``
+### Run Tests Locally
 
+Navigate to the project folder and run:
 
-### Ejecutar los tests en local
-Accede a la carpeta del proyecto.
+```bash
+pytest --headed
+```
 
-Ejecuta en la terminal:
+## Team Members
 
-`pytest --headed`
+* Irene Arribas Méndez
+* Anna Moreno Bonell
+* Sara Posada Domínguez
+* Florencia Raquel Posse
 
-Irene Arribas Méndez, 
-Anna Moreno Bonell, 
-Sara Posada Domínguez y 
-Florencia Raquel Posse
 
