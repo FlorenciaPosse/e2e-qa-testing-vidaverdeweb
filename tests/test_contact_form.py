@@ -56,5 +56,5 @@ def test_send_form_empty_email(page: Page):
     
     print("Then the user must see an error message")
     # Buscamos el mensaje que avisa de que el email es obligatorio
-    locator = page.get_by_text("error: the email field is required")
+    locator = page.get_by_text("el email es obligatorio")
     expect(locator).to_be_visible()

@@ -30,5 +30,5 @@ def test_product_filters_product_name_no_results(page: Page):
     page.get_by_role("searchbox", name="Nombre").fill("test")
 
     print("then the user must see the message no products found")
-    expect(page.get_by_text("no products found")).to_be_visible()
+    expect(page.get_by_text("no se encontraron productos que coincidan con tu búsqueda")).to_be_visible()
 
