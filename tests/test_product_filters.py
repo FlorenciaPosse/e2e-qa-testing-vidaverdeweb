@@ -31,3 +31,4 @@ def test_product_filters_name_price_category(page: Page):
 
     print("then the user must see the message no products found")
     expect(page.get_by_text("no products found")).to_be_visible()
+
