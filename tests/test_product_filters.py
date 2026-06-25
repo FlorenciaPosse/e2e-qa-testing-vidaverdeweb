@@ -22,7 +22,7 @@ def test_product_filters_name_price_category(page: Page):
     expect(page.get_by_text("22")).to_be_visible()
 
 
-def test_product_filters_name_price_category(page: Page):
+def test_product_filters_product_name_no_results(page: Page):
     print("Given the user visits product page")
     page.goto("https://web-qa.dev.adalab.es/products")
 
