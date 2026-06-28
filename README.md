@@ -4,7 +4,7 @@ In this project, a complete Quality Assurance (QA) process was carried out on th
 
 The project was developed as a team using the Scrum agile methodology and BDD (Behavior-Driven Development) for test design before development, following testing best practices.
 
-## Test Plan, Results, and Bug Reports: [View Test Plan](https://github.com/Bootcamp-QA/plandepruebas.html)
+## Test Plan, Results, and Bug Reports: [View Test Plan](https://bootcampqa-equipo2.atlassian.net/wiki/spaces/SCRUM/pages/294913/Plan+de+Pruebas+-+Web+Vida+Verde.html)
 
 This document details the test plan, the functionalities tested, the results of the executed tests, and the bug reports.
 
