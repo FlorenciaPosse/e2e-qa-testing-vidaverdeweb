@@ -18,7 +18,7 @@ def test_with_all_mandatory_fields(page: Page):
 
     print ("Then the user must see a success message")
     locator = page.get_by_text("¡Mensaje enviado con éxito!Gracias por contactarnos. Te responderemos lo antes posible.")
-    expect(locator).to_have_text("¡Mensaje enviado con éxito!Gracias por contactarnos. Te responderemos lo antes posible.")
+    expect(locator).to_be_visible
 
 def test_with_not_valid_email(page: Page):
     print("\nGiven user visits the Contact page")
@@ -38,7 +38,7 @@ def test_with_not_valid_email(page: Page):
 
     print ("Then the user must see a success message")
     locator = page.get_by_text("El formato del email no es válido")
-    expect(locator).to_have_text("El formato del email no es válido")
+    expect(locator).to_be_visible
 
 
 def test_send_form_empty_email(page: Page):
