@@ -1,0 +1,24 @@
+from playwright.sync_api import Page, expect
+def test_checkout_purchase_with_invalid_card(page: Page):
+    print("Given the user is on the products page")
+    page.goto("https://web-qa.dev.adalab.es/products")
+    
+    print('When the user filters and adds the product to the cart"')
+    page.get_by_placeholder("Buscar productos...").fill("palas")
+    page.get_by_text("Añadir al carrito").first.click()
+    
+    print('And proceeds to the checkout screen')
+    page.get_by_text("Finalizar compra").first.click()
+    page.get_by_text("Proceder al pago").first.click()
+
+    print('When the user fills the form with an invalid card number')   
+    page.get_by_label("Nombre Completo").fill("Reyes Maria")
+    page.get_by_label("Email").fill("test@gmail.com")
+    page.get_by_label("Dirección").fill("Málaga, Calle Larios, 25")
+    page.get_by_label("Número de tarjeta de crédito").fill("1234")
+
+    print('And clicks on "Completar compra"')
+    page.get_by_role("button", name="Completar compra").click()
+
+    print('Then the user should see the message "Número de tarjeta inválido"')
+    expect(page.get_by_text("Número de tarjeta inválido")).to_be_visible()
