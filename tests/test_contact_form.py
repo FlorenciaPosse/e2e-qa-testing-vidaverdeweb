@@ -1,60 +1,69 @@
 from playwright.sync_api import Page, expect
 
+from pages.contact_form_page import Contactpage
+
 def test_with_all_mandatory_fields(page: Page):
+
+    contact_form_page = Contactpage(page)
+
     print("\nGiven user visits the Contact page")
-    page.goto("https://web-qa.dev.adalab.es/contact")
+    contact_form_page.visit_contact_page()
 
     print ("When they fill the form filed Name with “Reyes Cuesta”")
-    page.get_by_role("textbox", name="Nombre *").fill("Reyes Cuesta")
+    contact_form_page.fill_name("Reyes Cuesta")
 
     print ("And fill the field Email with “test@gmail.com”")
-    page.get_by_role("textbox", name="Email *").fill("test@gmail.com")
+    contact_form_page.fill_email("test@gmail.com")
 
     print ("And fill the field Message with “Test message”")
-    page.get_by_role("textbox", name="Mensaje *").fill("Test message")
+    contact_form_page.fill_message("Test message")
 
     print ("And clicks on Send message")
-    page.get_by_role("button", name="Enviar Mensaje").click()
+    contact_form_page.cick_send()
 
     print ("Then the user must see a success message")
-    locator = page.get_by_text("¡Mensaje enviado con éxito!Gracias por contactarnos. Te responderemos lo antes posible.")
-    expect(locator).to_have_text("¡Mensaje enviado con éxito!Gracias por contactarnos. Te responderemos lo antes posible.")
+    contact_form_page.success_message()
+
 
 def test_with_not_valid_email(page: Page):
+
+    contact_form_page = Contactpage(page)
+    
     print("\nGiven user visits the Contact page")
-    page.goto("https://web-qa.dev.adalab.es/contact")
+    contact_form_page.visit_contact_page()
 
     print ("When they fill the form filed Name with “Reyes Cuesta”")
-    page.get_by_role("textbox", name="Nombre *").fill("Reyes Cuesta")
+    contact_form_page.fill_name("Reyes Cuesta")
 
     print ("And fill the field Email with “test”")
-    page.get_by_role("textbox", name="Email *").fill("test")
+    contact_form_page.fill_email("test")
 
     print ("And fill the field Message with “Test message”")
-    page.get_by_role("textbox", name="Mensaje *").fill("Test message")
+    contact_form_page.fill_message("Test message")
 
     print ("And clicks on Send message")
-    page.get_by_role("button", name="Enviar Mensaje").click()
+    contact_form_page.cick_send()
 
-    print ("Then the user must see a success message")
-    locator = page.get_by_text("El formato del email no es válido")
-    expect(locator).to_have_text("El formato del email no es válido")
+    print ("Then the user must see an error message")
+    contact_form_page.error_message()
 
 
 def test_send_form_empty_email(page: Page):
+
+    contact_form_page = Contactpage(page)
+
     print("\nGiven user visits the Contact page")
     page.goto("https://web-qa.dev.adalab.es/contact")
     
     print("When they fill the form field Name with 'Reyes Cuesta'")
-    page.get_by_role("textbox", name="Nombre *").fill("Reyes Cuesta")
+    contact_form_page.fill_name("Reyes Cuesta")
     
     print("And they fill the field Message with 'test message'")
-    page.get_by_role("textbox", name="Mensaje *").fill("test message")
+    contact_form_page.fill_message("test message")
     
     print("And clicks on Send message")
-    page.get_by_role("button", name="Enviar Mensaje").click()
+    contact_form_page.cick_send()
     
     print("Then the user must see an error message")
     # Buscamos el mensaje que avisa de que el email es obligatorio
-    locator = page.get_by_text("el email es obligatorio")
-    expect(locator).to_be_visible()
+    contact_form_page.error_message_no_email()
