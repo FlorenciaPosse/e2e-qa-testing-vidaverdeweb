@@ -1,4 +1,5 @@
 from playwright.sync_api import Page, expect
+
 def test_checkout_purchase_with_valid_data(page: Page):
     print("Given the user is on the products page")
     page.goto("https://web-qa.dev.adalab.es/products")
