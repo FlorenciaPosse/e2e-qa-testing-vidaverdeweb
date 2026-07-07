@@ -51,3 +51,6 @@ class ProductsPage:
     def verify_product_details(self):
         expect(self.ficus_heading).to_contain_text("Ficus Lyrata")
         expect(self.ficus_price).to_contain_text("35.00 €")       
+
+    def add_product_to_shopping_cart(self,product_name):
+        self.page.get_by_role("button", name="Añadir "+product_name).click()    
